@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c01a8tyapk4va"]
+
+[ext_resource type="PackedScene" uid="uid://bi4203le1gpsu" path="res://escenas/player.tscn" id="1_ix7dc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1lfm"]
+size = Vector2(393, 13)
+
+[node name="Level" type="Node2D"]
+
+[node name="suelo" type="StaticBody2D" parent="."]
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="suelo"]
+offset_left = 306.0
+offset_top = 497.0
+offset_right = 700.0
+offset_bottom = 523.0
+color = Color(0.0267215, 0.0267215, 0.0267215, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo"]
+position = Vector2(503.5, 503.5)
+shape = SubResource("RectangleShape2D_b1lfm")
+
+[node name="Player" parent="." instance=ExtResource("1_ix7dc")]
+position = Vector2(308, 455)
