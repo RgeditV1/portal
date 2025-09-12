@@ -6,6 +6,11 @@ const VELOCIDAD = 200.0
 const VEL_SALTO: int = - 400
 var gravedad = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+signal activar_portal
+
+func crear_portal():
+	if Input.is_action_just_pressed("f"):
+		emit_signal("activar_portal")
 
 func salto(delta):
 	if Input.is_action_pressed("w") and is_on_floor():
@@ -19,8 +24,9 @@ func movimiento():
 		velocity.x = mover * VELOCIDAD
 	else:
 		velocity.x = lerp(velocity.x, mover * VELOCIDAD, 0.2) #CONTROLA LA DESACELERACION
-		
+
 func _physics_process(delta: float) -> void:
 	movimiento()
+	crear_portal()
 	salto(delta)
 	move_and_slide()

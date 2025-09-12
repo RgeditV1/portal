@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c01a8tyapk4va"]
+[gd_scene load_steps=4 format=3 uid="uid://c01a8tyapk4va"]
 
 [ext_resource type="PackedScene" uid="uid://bi4203le1gpsu" path="res://escenas/player.tscn" id="1_ix7dc"]
+[ext_resource type="Script" uid="uid://dky6cqwf4u633" path="res://scripts/level.gd" id="1_kedwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1lfm"]
 size = Vector2(393, 13)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_kedwj")
 
 [node name="suelo" type="StaticBody2D" parent="."]
 collision_layer = 2
