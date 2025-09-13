@@ -17,6 +17,14 @@ metroidvania_system/settings_file="uid://coms16kf3m6rs"
 config/name="Portal"
 run/main_scene="uid://c01a8tyapk4va"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+run/max_fps=60
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=480
+window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [editor]
 
@@ -50,3 +58,8 @@ w={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/stretch/mode="disabled"
+textures/size/resizable=true
+textures/size/viewport_height=648
+textures/size/viewport_width=1152
+textures/max_fps=0
