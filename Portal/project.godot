@@ -16,7 +16,7 @@ metroidvania_system/settings_file="uid://coms16kf3m6rs"
 
 config/name="Portal"
 run/main_scene="uid://c01a8tyapk4va"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 run/max_fps=60
 
 [display]

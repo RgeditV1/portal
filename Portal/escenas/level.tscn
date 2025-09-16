@@ -10,6 +10,7 @@ size = Vector2(393, 13)
 script = ExtResource("1_kedwj")
 
 [node name="suelo" type="StaticBody2D" parent="."]
+position = Vector2(-153, -169)
 collision_layer = 2
 metadata/_edit_group_ = true
 
@@ -25,4 +26,4 @@ position = Vector2(503.5, 503.5)
 shape = SubResource("RectangleShape2D_b1lfm")
 
 [node name="Player" parent="." instance=ExtResource("1_ix7dc")]
-position = Vector2(308, 455)
+position = Vector2(162, 280)
