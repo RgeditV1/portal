@@ -1,12 +1,16 @@
 class_name Player extends CharacterBody2D
 
 
-
 const VELOCIDAD = 200.0
 const VEL_SALTO: int = - 400
 var gravedad = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 signal activar_portal
+signal teleport
+
+func telepor():
+	if Input.is_action_just_pressed("q"):
+		emit_signal("teleport")
 
 func crear_portal():
 	if Input.is_action_just_pressed("f"):
@@ -28,5 +32,6 @@ func movimiento():
 func _physics_process(delta: float) -> void:
 	movimiento()
 	crear_portal()
+	telepor()
 	salto(delta)
 	move_and_slide()

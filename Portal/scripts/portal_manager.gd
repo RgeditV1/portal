@@ -1,23 +1,18 @@
 class_name PortalManager extends Node
 
-
-var guardar_posicion: Vector2
-
 const PORTAL_ESCENA= preload("res://escenas/portal.tscn")
 var portal
 
 #Un array para almacenar las instancias
 var instancias = []
 
-#funcion init para iniciar la variable position cada que se instancie
-func _init(self_position: Vector2) -> void:
-	guardar_posicion = self_position
-
-
-func añadirPortal():
+func añadirPortal(posicion: Vector2):
 	portal = PORTAL_ESCENA.instantiate()
-	instancias.push_back(portal) #añade un elemento a la ultima posicion de un array
-	portal.global_position =  guardar_posicion
+	instancias.append(portal) #añade un elemento a la ultima posicion de un array
+	portal.global_position =  posicion
+	add_child(portal)
 		
 func eliminarPortal():
-	instancias.pop_front() #Elimina el primer elemento de un array
+	instancias[0].queue_free()
+	instancias.remove_at(0) #Elimina el primer elemento de un array
+	
